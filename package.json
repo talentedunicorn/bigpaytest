@@ -1,0 +1,16 @@
+{
+  "name": "daplug",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel client/index.html",
+    "server": "PORT=8080 node server.js"
+  },
+  "dependencies": {
+    "parcel-bundler": "^1.12.3",
+    "react": "^16.0.0",
+    "react-dom": "^16.8.6",
+    "ws": "^7.0.0"
+  }
+}
