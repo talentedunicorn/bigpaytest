@@ -1,33 +1,39 @@
 import React, { useState, useEffect} from "react"
-import { Heading, List } from "talentedunicorn-ui-kit"
+import { Link } from "@reach/router"
+import { Heading, List, Button } from "talentedunicorn-ui-kit"
 
 const Page1 = _ => {
-  const socket = new WebSocket(process.env.socketURL)
   const [messages, setMessages] = useState([])
   const [connected, setConnected] = useState(false)
 
-  useEffect(() => {
+  const connect = _ => {
+    const socket = new WebSocket(process.env.socketURL)
     socket.onopen = _ => setConnected(true)
-    socket.onerror = error => console.error(`Error ${error}`)
+    socket.onerror = error => console.error(error)
     socket.onclose = _ => {
-      console.log('closing...')
       setConnected(false)
+      console.log('closing...')
     }
     socket.onmessage = message => {
       if (Boolean(Date.parse(message.data))) {
         setMessages(messages => messages.concat(message.data))
       }
     }
+  }
 
+  useEffect(() => {
+    connect()
     return () => {
-      socket.close()
+      console.log('Closing socket...')
     }
   }, [])
 
   return (
     <main>
-      <Heading level={1} text={`Printing date and time from ${process.env.socketURL}`}/>
-      { connected && <p>Connected</p>}
+      <Heading level={2} text={`Printing date and time from ${process.env.socketURL}`}/>
+      <Link to="2">Page 2</Link>
+      { connected && <p>Connected</p> }
+      { !connected && <Button handleClick={() => connect()}>Connect</Button>}
       <List minimal={true}>
         { messages.map((message, index) => {
           return (<li key={index}>{message}</li>)

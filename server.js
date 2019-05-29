@@ -12,13 +12,14 @@ wss.on(`connection`, ws => {
     })
   })
 
-  wss.clients.forEach(client => { 
-    if (client !== ws) {
-      setTimeout(() => {
-        return client.send(`${new Date()}`)
-      }, 1000)
-    }
-  })
-
   ws.send('Talk to me darlin')
+
+  setTimeout(() => {
+    setInterval(() => {
+      let date = new Date()
+      console.log(`Sending: ${date}`)
+      ws.send(date.toString())
+    }, 1000)
+  }, 1000)
+
 })
