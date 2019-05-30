@@ -1,5 +1,4 @@
 import React, { useState, useEffect} from "react"
-import { Link } from "@reach/router"
 import { Heading, List, Button } from "talentedunicorn-ui-kit"
 
 const Page1 = _ => {
@@ -31,7 +30,6 @@ const Page1 = _ => {
   return (
     <main>
       <Heading level={2} text={`Printing date and time from ${process.env.socketURL}`}/>
-      <Link to="2">Page 2</Link>
       { connected && <p>Connected</p> }
       { !connected && <Button handleClick={() => connect()}>Connect</Button>}
       <List minimal={true}>

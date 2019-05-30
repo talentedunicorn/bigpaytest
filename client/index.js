@@ -16,7 +16,11 @@ const NotFound = _ =>
 
 const App = _ =>  
   <>
-  <Heading level={1} text="BigPay exercise"/>
+  <header className="App-header">
+    <Heading level={1} text="BigPay interview"/>
+    <Link to="/">WebSocket exercise</Link>
+    <Link to="2">Github API exercise</Link>
+  </header>
   <Router>
     <Page1 path="/"/>
     <Page2 path="2"/>

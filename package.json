@@ -9,10 +9,12 @@
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
+    "formik": "^1.5.7",
     "parcel-bundler": "^1.12.3",
-    "react": "^16.8.6",
+    "react": ">=15",
     "react-dom": "^16.8.6",
     "talentedunicorn-ui-kit": "^0.2.4",
+    "underscore": "^1.9.1",
     "ws": "^7.0.0"
   }
 }

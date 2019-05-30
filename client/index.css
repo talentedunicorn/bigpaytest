@@ -1,3 +1,7 @@
+img {
+  max-width: 100%;
+}
+
 main {
   display: flex;
   flex-flow: column;
@@ -6,4 +10,55 @@ main {
 ul {
   font-family: var(--font-alt);
   overflow-y: auto;
+}
+
+.App-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.App-header h1 {
+  font-size: 1rem;
+  padding: var(--space);
+  text-transform: uppercase;
+  letter-spacing: 0.125em;
+}
+
+.App-header a {
+  padding: var(--space);
+}
+
+.App-header a[aria-current="page"] {
+  color: var(--gray);
+}
+
+.Profile,
+.Contributions {
+  padding: calc(var(--space) * 2);
+}
+
+.Profile {
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+}
+
+.Profile header {
+  display: flex;
+  align-items: center;
+}
+
+.Profile h3 {
+  margin-right: var(--space);
+}
+
+.Profile img {
+  border-radius: 100%;
+  margin-bottom: var(--space);
+}
+
+.Results {
+  display: flex;
+  flex-wrap: wrap;
 }

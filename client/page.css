@@ -1,0 +1,71 @@
+.Search,
+.Search label {
+  display: flex;
+}
+
+.Search {
+  align-items: flex-end;
+  padding: var(--space);
+  flex-wrap: wrap;
+}
+
+.Search .error {
+  flex: 100%;
+  color: var(--red);
+}
+
+.Search label {
+  flex-flow: column;
+  flex: 1;
+}
+
+.Search input {
+  --border-color: var(--primary);
+  background: none;
+  border: none;
+  padding: var(--space) calc(var(--space) / 2);
+  border-bottom: 2px solid var(--border-color);
+}
+
+.Search input:hover,
+.Search input:focus,
+.Search input:active {
+  --border-color: var(--gray);
+}
+
+.Search button {
+  margin: 0;
+}
+
+#app [class^="heading-module_H2"] {
+  margin: var(--space);
+}
+
+.Controls {
+  display: flex;
+  align-items: center;
+}
+
+.Controls label {
+  display: flex;
+  flex-flow: column;
+  margin: var(--space);
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--space) * 2);
+  background: hsla(0, 0%, 0%, 0.6);
+}
+
+.Modal-content {
+  background: var(--white);
+  padding: var(--space);
+}
