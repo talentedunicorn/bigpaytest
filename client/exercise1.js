@@ -33,7 +33,7 @@ const Page1 = _ => {
       <header>
         <Heading level={2} text={`Printing date and time from ${process.env.socketURL}`}/>
         { connected && <p style={{ margin: `calc(var(--space) * 2)`}}>Connected</p> }
-        { !connected && <Button handleClick={() => connect()}>Connect</Button>}
+        { !connected && <Button style={{ margin: `var(--space)`}} handleClick={() => connect()}>Connect</Button>}
       </header>
       <div className="Server-messages">
         <List minimal={true}>
