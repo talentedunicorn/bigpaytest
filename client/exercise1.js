@@ -15,7 +15,8 @@ const Page1 = _ => {
     }
     socket.onmessage = message => {
       if (Boolean(Date.parse(message.data))) {
-        setMessages(messages => messages.concat(message.data))
+        let latency = new Date() - new Date(Date.parse(message.data))
+        setMessages(messages => messages.concat(`Server: ${message.data} - latency ${latency}ms`))
       }
     }
   }
@@ -28,15 +29,19 @@ const Page1 = _ => {
   }, [])
 
   return (
-    <main>
-      <Heading level={2} text={`Printing date and time from ${process.env.socketURL}`}/>
-      { connected && <p>Connected</p> }
-      { !connected && <Button handleClick={() => connect()}>Connect</Button>}
-      <List minimal={true}>
-        { messages.map((message, index) => {
-          return (<li key={index}>{message}</li>)
-        })}
-      </List>
+    <main className="Page1">
+      <header>
+        <Heading level={2} text={`Printing date and time from ${process.env.socketURL}`}/>
+        { connected && <p style={{ margin: `calc(var(--space) * 2)`}}>Connected</p> }
+        { !connected && <Button handleClick={() => connect()}>Connect</Button>}
+      </header>
+      <div className="Server-messages">
+        <List minimal={true}>
+          { messages.map((message, index) => {
+            return (<li className="Server-message" key={index}>{message}</li>)
+          })}
+        </List>
+      </div>
     </main>
   )
 }
