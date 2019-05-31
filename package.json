@@ -4,6 +4,7 @@
   "main": "server.js",
   "license": "MIT",
   "scripts": {
+    "start": "npx concurrently --kill-others \"npm run server\" \"npm run client\"",
     "client": "parcel client/index.html",
     "server": "PORT=8080 node server.js"
   },

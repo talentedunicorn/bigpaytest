@@ -16,8 +16,7 @@
 - Unzip the package
 - Change directory to the unziped folder
 - Run `$ yarn install` to install dependencies
-- Run `$ yarn server` to start the websocket server
-- Run `$ yarn client` to start the frontend client
+- Run `$ yarn start` to start the websocket server and the frontend client
 - Access the page at the displayed address or `http://localhost:1234`
 
 ## Shortcomings
