@@ -15,7 +15,7 @@
     "react": ">=15",
     "react-dom": "^16.8.6",
     "talentedunicorn-ui-kit": "^0.2.4",
-    "underscore": "^1.9.1",
+    "underscore": "^1.12.1",
     "ws": "^7.0.0"
   }
 }
